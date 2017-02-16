@@ -161,12 +161,12 @@ namespace Bushman.RevitDevTools {
                     panel_name);
             }
 
-            string this_assembly_path = Assembly
-                .GetExecutingAssembly().Location;
+            string cmd_asm_path = cmd_type.Assembly
+                .Location;
 
             // Get localized help file name
             string help_file = Path.Combine(Path
-                .GetDirectoryName(this_assembly_path),
+                .GetDirectoryName(cmd_asm_path),
                 GetResourceString(cmd_type,
                 default_resources_type, ResourceKeyNames
                 .HelpFileName));
@@ -195,7 +195,7 @@ namespace Bushman.RevitDevTools {
 
             PushButtonData button_data = new PushButtonData(
                 cmd_name, cmd_text,
-                this_assembly_path, cmd_type.FullName);
+                cmd_asm_path, cmd_type.FullName);
 
             // Get corresponding class name which implements 
             // the IExternalCommandAvailability interface
