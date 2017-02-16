@@ -2,14 +2,16 @@
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 
 /* RevitDevTools
- * Tools.cs
+ * UIBuilder.cs
  * https://revit-addins.blogspot.ru
  * © Bushman, 2017
  *
- * The internal tools of the 'RevitDevTools' add-in.
+ * The common tools for UI building by Revit add-ins.
+ * This class is for internal using by the Revit add-ins. 
  */
 #region Namespaces
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
@@ -23,15 +25,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Interop;
 using System.IO;
 using WPF = System.Windows;
-using System.Linq;
 #endregion
 
 namespace Bushman.RevitDevTools {
 
     /// <summary>
+    /// The common tools for UI building by Revit add-ins.
     /// This class is for internal using by the Revit add-ins. 
     /// </summary>
-    static class Tools {
+    static class UIBuilder {
 
         /// <summary>
         /// Build ribbon tabs, panels, and buttons for the 
@@ -82,7 +84,7 @@ namespace Bushman.RevitDevTools {
                         out result) && result) {
 
                     // Add the button on the ribbon panel.
-                    Tools.AddButton(uic_app, cmd,
+                    UIBuilder.AddButton(uic_app, cmd,
                         default_resources_type);
                 }
             }

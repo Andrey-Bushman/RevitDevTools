@@ -74,10 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ResourceKeyNames.cs" />
-    <Compile Include="ExternalApplication.cs" />
-    <Compile Include="ExternalCommandAvailability.cs" />
-    <Compile Include="ExternalCommand.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="UIBuilder.cs" />
     <Compile Include="RevitPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -87,17 +84,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExternalApplication.resx">
-      <DependentUpon>ExternalApplication.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ExternalCommand.resx">
-      <DependentUpon>ExternalCommand.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RevitPatches.resx">
       <DependentUpon>RevitPatches.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tools.resx">
-      <DependentUpon>Tools.cs</DependentUpon>
+    <EmbeddedResource Include="UIBuilder.resx">
+      <DependentUpon>UIBuilder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -107,12 +98,8 @@
     <Content Include="readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="RevitDevTools.addin" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExternalCommandAvailability.resx">
-      <DependentUpon>ExternalCommandAvailability.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -122,14 +109,11 @@
     <None Include="Resources\Button_image.png" />
     <None Include="Resources\Button_tooltip_image.png" />
     <None Include="packages.config" />
-    <None Include="RevitDevTools.chm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2017"
-mkdir "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)\help"
-xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)"
-copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\2017\$(ProjectName)\help"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
