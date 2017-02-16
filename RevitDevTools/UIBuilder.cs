@@ -33,7 +33,7 @@ namespace Bushman.RevitDevTools {
     /// The common tools for UI building by Revit add-ins.
     /// This class is for internal using by the Revit add-ins. 
     /// </summary>
-    static class UIBuilder {
+    public static class UIBuilder {
 
         /// <summary>
         /// Build ribbon tabs, panels, and buttons for the 

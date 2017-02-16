@@ -34,7 +34,7 @@ namespace Bushman.RevitDevTools {
     /// <summary>
     /// The static class with the Revit API patches.
     /// </summary>
-    static class RevitPatches {
+    public static class RevitPatches {
 
         /// <summary>
         /// This patch fixes the bug of localization switching

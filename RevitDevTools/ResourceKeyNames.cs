@@ -16,7 +16,7 @@ namespace Bushman.RevitDevTools {
     /// resources are used by this add-in for UI automatically 
     /// building.
     /// </summary>
-    static class ResourceKeyNames {
+    public static class ResourceKeyNames {
         /// <summary>
         /// The resource with this key contains the value 
         /// (true\false) which defines whether to create 
