@@ -97,6 +97,11 @@ namespace Bushman.RevitDevTools {
 
         /// <summary>
         /// Add the button to Revit UI for an external command.
+        /// 
+        /// WARNING!
+        /// This method searches the command availability type
+        /// in the same assembly where the command's type is 
+        /// defined.
         /// </summary>
         /// <param name="uic_app">A handle to the application 
         /// being started.</param>
@@ -203,7 +208,8 @@ namespace Bushman.RevitDevTools {
                 default_resources_type, ResourceKeyNames
                 .CommandAvailabilityType);
 
-            var av_type = Type.GetType(aviability_type);
+            var av_type = cmd_type.Assembly.GetType(
+                aviability_type);
 
             if (av_type != null && av_type.GetInterface(typeof(
                     IExternalCommandAvailability).FullName)
