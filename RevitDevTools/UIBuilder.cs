@@ -134,10 +134,15 @@ namespace Bushman.RevitDevTools {
                     default_resources_type));
             }
 
+            // The resource key name which contains the tab 
+            // name.
+            string tab_key = GetResourceString(cmd_type,
+                default_resources_type, ResourceKeyNames
+                .RibbonTabKey);
+
             // The target ribbon tab name.
             string tab_name = GetResourceString(cmd_type,
-                default_resources_type, ResourceKeyNames
-                .RibbonTabName);
+                default_resources_type, tab_key);
 
             try {
                 /* Through the using of the tabs_dict 
@@ -151,10 +156,15 @@ namespace Bushman.RevitDevTools {
             }
             catch { }
 
+            // The resource key name which contains the panel 
+            // name.
+            string panel_key = GetResourceString(cmd_type,
+                default_resources_type, ResourceKeyNames
+                .RibbonPanelKey);
+
             // The target ribbon panel name
             string panel_name = GetResourceString(cmd_type,
-                default_resources_type, ResourceKeyNames
-                .RibbonPanelName);
+                default_resources_type, panel_key);
 
             RibbonPanel panel = uic_app.GetRibbonPanels(
                 tab_name).FirstOrDefault(

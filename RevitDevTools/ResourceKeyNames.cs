@@ -69,16 +69,18 @@ namespace Bushman.RevitDevTools {
         /// </summary>
         public const string HelpTopicId = "_Help_topic_Id";
         /// <summary>
-        /// The resource with this key contains the value which
+        /// The resource with this key contains the name of 
+        /// other resource key which contains the value which 
         /// defines the command ribbon tab name.
         /// </summary>
-        public const string RibbonTabName = "_Ribbon_tab_name";
+        public const string RibbonTabKey = "_Ribbon_tab_key";
         /// <summary>
-        /// The resource with this key contains the value which
+        /// The resource with this key contains the name of 
+        /// other resource key which contains the value which 
         /// defines the command ribbon panel name.
         /// </summary>
-        public const string RibbonPanelName =
-            "_Ribbon_panel_name";
+        public const string RibbonPanelKey =
+            "_Ribbon_panel_key";
         /// <summary>
         /// The resource with this key contains the value which
         /// defines the command button image.
