@@ -1,6 +1,6 @@
 <#
 Install.ps1
-Revit-2017x64 NuGet package.
+Revit-2015x64, Revit-2017x64, and Revit-2018.1x64 NuGet packages.
 
 © Andrey Bushman, 2016
 https://www.nuget.org/profiles/Bush
